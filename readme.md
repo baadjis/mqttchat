@@ -1,8 +1,8 @@
-# mqttchat
+# mqttchat:
 A chat app using mqtt protocol (group or one to one) with paho mqtt python client
-including a chatbot(searching on gogle and giving the answer)on the terminal
+including a chatbot(searching on gogle and giving the answer)on the terminal.
 
-## how to 
+## How to:
 
 ### chat with the chatbot(ask question to the bot )
  *run the files ``` bot.py``` and ``` client.py``` on different terminals
@@ -14,7 +14,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
   * on ``` client.py```terminal  run  ``` chat <your_user_name>  <other_user_name>``` on the chat shell
   * let other person do the same and start messaging
 
-### command:
+### commands:
   * to quit the chat press ```cltr+c``` or type ```stop``` 
   
 ## Todos:
