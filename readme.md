@@ -17,7 +17,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
 ### command:
   * to quit the chat press ```cltr+c``` or type ```stop``` 
   
-##Tods:
+## Todos:
  * Add login and registration functions
  * Add group chat
  * Add files sending
