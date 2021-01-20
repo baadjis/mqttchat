@@ -30,7 +30,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
 
   
   
-##Tods:
+## Todos:
  * Add login and registration functions
  * Add group chat
  * Add files sending
