@@ -21,7 +21,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
 ## commands:
 ### Main Menu
   * ```quit```  quit and exit
-  * ```assk```  go to the chatbot shell
+  * ```ask```  go to the chatbot shell
   * ```chat```  go to the chat shell
 ### chat shell
    * ```login <user_name``` login with your username
