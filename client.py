@@ -161,7 +161,7 @@ def ask(user_name):
 
 
 @Ask_cli.command()
-def quit():
+def back():
     os.system("python3.8 client.py")
 
 
