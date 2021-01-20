@@ -2,13 +2,13 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def web_scraping(qs):
+def search(qs):
     global flag2
 
     URL = 'https://www.google.com/search?q=' + qs
     page = requests.get(URL)
     wiki=''
-    answer='sorry i ignore the answer'
+    answer='sorry i ignore the answer \n please give me more precisions'
     soup = BeautifulSoup(page.content, 'html.parser')
 
     links = soup.findAll("a")

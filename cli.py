@@ -1,6 +1,7 @@
 import cmd
 import argparse
 import sys
+import copy
 
 
 def help_builder(text):
@@ -98,22 +99,26 @@ class Cli():
         return type(self.__class__.__name__ + '_shell', (CostumedCommand,), d)()
 
     def run(self):
-        the_args = sys.argv  # first arg is file
+
+        the_args = copy.copy(sys.argv)  # first arg is file
+        #print(len(the_args))
         # Run shell if no second arguments
         if len(the_args) == 1:
             shell = self.get_shell()
             shell.prompt = self.name + ">>"
             shell.cmdloop()
             return 0
+        if len(the_args) > 1:
+            # Get function name
+            func_name = the_args[1]
 
-        # Get function name
-        func_name = the_args[1]
+            #print(self.commands[0]['name'])
+            # First argument is function name
+            for func_desc in self.commands:
 
-        # First argument is function name
-        for func_desc in self.commands:
-            if func_name == func_desc['name']:
-                func_desc['method'](None, " ".join(the_args[2:]))
-                return 0
-
-        print('No such command')
+                if func_name == func_desc['name']:
+                    func_desc['method'](None, " ".join(the_args[2:]))
+                    return 0
+        else:
+            print('No such command')
 
