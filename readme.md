@@ -3,19 +3,32 @@ A chat app using mqtt protocol (group or one to one) with paho mqtt python clien
 including a chatbot(searching on gogle and giving the answer)on the terminal
 
 ## how to 
-
-### chat with the chatbot(ask question to the bot )
- *run the files ``` bot.py``` and ``` client.py``` on different terminals
- * on ``` client.py```terminal  run  ``` chat <your_user_name>  chatbot``` on the chat shell
-
-
 ### chat  with another client
-  * run the files ``` client.py``` on your terminal.
-  * on ``` client.py```terminal  run  ``` chat <your_user_name>  <other_user_name>``` on the chat shell
-  * let other person do the same and start messaging
+  * run the files ``` client.py``` on your terminal the menu will appear.
+  * type ```chat``` to go to the chat shell 
+  * on the chat shell type  ``` login <your_user_name```
+  * invite the person you want to chat with by typing ``` invite <other_person_user_name```
+  * finally start sending message to the other person
 
-### command:
-  * to quit the chat press ```cltr+c``` or type ```stop``` 
+
+### chat with the chatbot(ask questions to the bot )
+ * run the files ``` client.py``` on your terminal the menu will appear.
+ * type ```ask``` to go to the chatbot shell
+ * finally, start asking questions to the bot
+
+
+
+## commands:
+### Main Menu
+  * ```quit```  quit and exit
+  * ```assk```  go to the chatbot shell
+  * ```chat```  go to the chat shell
+### chat shell
+   * ```login <user_name``` login with your username
+   * ```invite <other>``` invite a friend to the chat
+   * ```back``` go back to the main menu
+
+  
   
 ##Tods:
  * Add login and registration functions
