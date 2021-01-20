@@ -79,7 +79,7 @@ class ChatClient:
         if rc != 0:
             print("Unexpected Disconnection")
 
-    def start_chat(self):
+    def configure_chat(self):
         """
         configure the chat callbacks
 
@@ -92,8 +92,9 @@ class ChatClient:
 
     def Chat(self, chat_promt=""):
         """run the chat loop"""
+        self.configure_chat()
         self.client.connect(self.address, self.port, keepalive=120)
-        self.start_chat()
+
 
         time.sleep(1)
 
