@@ -6,7 +6,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
 ### chat  with another client
   * run the files ``` client.py``` on your terminal the menu will appear.
   * type ```chat``` to go to the chat shell 
-  * on the chat shell type  ``` login <your_user_name```
+  * on the chat shell type  ``` login <your_user_name>```
   * invite the person you want to chat with by typing ``` invite <other_person_user_name```
   * finally start sending message to the other person
 
@@ -24,7 +24,7 @@ including a chatbot(searching on gogle and giving the answer)on the terminal
   * ```ask```  go to the chatbot shell
   * ```chat```  go to the chat shell
 ### chat shell
-   * ```login <user_name``` login with your username
+   * ```login <user_name>``` login with your username
    * ```invite <other>``` invite a friend to the chat
    * ```back``` go back to the main menu
 
