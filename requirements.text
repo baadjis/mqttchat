@@ -6,3 +6,16 @@ paho-mqtt==1.5.1
 requests==2.25.1
 soupsieve==2.1
 urllib3==1.26.2
+beautifulsoup4==4.9.3
+certifi==2020.12.5
+chardet==4.0.0
+docutils==0.16
+idna==2.10
+Kivy==2.0.0
+Kivy-Garden==0.1.4
+KivyMD-Components==0.1.6
+paho-mqtt==1.5.1
+Pygments==2.7.4
+requests==2.25.1
+soupsieve==2.1
+urllib3==1.26.2
