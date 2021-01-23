@@ -1,8 +1,8 @@
 import paho.mqtt.client as mqtt
 import time
 import os
-from cli import Cli
-from scrapping import search
+from command import Cli
+from scrapping.webscrapping import search
 import sys
 
 User_Name = 'client1'
