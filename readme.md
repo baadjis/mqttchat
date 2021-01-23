@@ -1,6 +1,6 @@
 # mqttchat
 A chat app using mqtt protocol (group or one to one) with paho mqtt python client
-including a chatbot(searching on gogle and giving the answer)on the terminal
+including a bot(searching from google to answer your questions )on the terminal
 
 ## how to 
 ### chat  with another client
