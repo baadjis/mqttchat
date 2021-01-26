@@ -1,4 +1,9 @@
+#!/usr/local/bin/iotenv python
+
+
 from kivy.app import App
+from kivymd.app import MDApp
+from kivymd.theming import ThemeManager
 from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.label import Label
@@ -23,7 +28,7 @@ class RegisterScreen(Screen):
 
                 self.reset()
 
-                SManager.current = "Login"
+                self.parent.current = "Login"
             else:
                 invalidForm()
         else:
@@ -31,7 +36,7 @@ class RegisterScreen(Screen):
 
     def login(self):
         self.reset()
-        SManager.current = "Login"
+        self.parent.current = "Login"
 
     def reset(self):
         self.email.text = ""
@@ -51,13 +56,14 @@ class LoginScreen(Screen):
             ChatScreen.current = self.email.text
             self.reset()
 
-            SManager.current = "Main"
+            self.parent.current = "Main"
         else:
             invalidLogin()
 
     def registerBtn(self):
         self.reset()
-        SManager.current = "Register"
+
+        self.parent.current = "Register"
 
     def reset(self):
         self.email.text = ""
@@ -65,7 +71,7 @@ class LoginScreen(Screen):
 
 
 class MainScreen(Screen):
-    n = ObjectProperty(None)
+    nas = ObjectProperty(None)
     created = ObjectProperty(None)
     email = ObjectProperty(None)
     chat = ObjectProperty(None)
@@ -73,15 +79,16 @@ class MainScreen(Screen):
     current = ""
 
     def go_chat(self):
-        SManager.current = "Chat"
+        self.parent.current = "Chat"
 
     def logOut(self):
-        SManager.current = "Login"
+        self.parent.current = "Login"
 
     def on_enter(self, *args):
+
         password, name, created = "", "", ""
 
-        self.n.text = "Account Name: " + name
+        self.nas.text = "Account Name: " + name
         self.email.text = "Email: " + self.current
         self.created.text = "Created On: " + created
 
@@ -96,7 +103,6 @@ class ChatScreen(Screen):
         mqtt_client.disconnect()
 
     def on_enter(self, *args):
-
         self.configure_mqtt()
         mqtt_client.loop_start()
         mqtt_client.subscribe("/chat/cnd2")
@@ -109,10 +115,10 @@ class ChatScreen(Screen):
     def sendBtn(self):
         print(self.current)
         print(self.to_send.text)
-        topic="/chat/" + self.current
-        mqtt_client.publish(topic,self.to_send.text)
+        topic = "/chat/" + self.current
+        mqtt_client.publish(topic, self.to_send.text)
         self.messages.text = self.messages.text + "\n" + f"{topic}:{self.to_send.text}"
-        self.to_send.text=""
+        self.to_send.text = ""
 
     def on_message(self, client, pub_top,
                    message):  # Called when a message has been received on a topic that the client has subscirbed to.
@@ -142,7 +148,10 @@ class ChatScreen(Screen):
 
 
 class SKreenManager(ScreenManager):
-    pass
+
+    def __init__(self,id, **kwargs):
+        self.id=id
+        super(SKreenManager, self).__init__(**kwargs)
 
 
 def invalidLogin():
@@ -160,21 +169,20 @@ def invalidForm():
     pop.open()
 
 
-kv = Builder.load_file("app.kv")
-SManager = SKreenManager()
-screens = [LoginScreen(name="Login"), MainScreen(name="Main"), RegisterScreen(name="Register"),
-           ChatScreen(name="Chat")]
-for screen in screens:
-    SManager.add_widget(screen)
+# kv = Builder.load_file("app.kv")
 
-SManager.current = "Login"
 mqtt_client = mqtt.Client()
-print(SManager)
 
-class mqttApp(App):
+
+class mqttApp(MDApp):
+
 
     def build(self):
-        return SManager
+        self.theme_cls.theme_style = "Dark"
+        return Builder.load_file('app.kv')
+
+
+
 
 
 if __name__ == '__main__':
