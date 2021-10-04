@@ -1,8 +1,9 @@
 # mqttchat
 A chat app using mqtt protocol (group or one to one) with paho mqtt python client
-including a bot(searching from google to answer your questions )on the terminal
+including a bot(searching from google to answer your questions )on the terminal.
+this also include a user interface built with kivy.
 
-## how to 
+##  CLI 
 ### chat  with another client
   * run the files ``` cli/client.py``` on your terminal the menu will appear.
   * type ```chat``` to go to the chat shell 
@@ -18,8 +19,8 @@ including a bot(searching from google to answer your questions )on the terminal
 
 
 
-## commands:
-### Main Menu
+### commands:
+##### Main Menu
   * ```quit```  quit and exit
   * ```ask```  go to the chatbot shell
   * ```chat```  go to the chat shell
@@ -29,7 +30,13 @@ including a bot(searching from google to answer your questions )on the terminal
    * ```back``` go back to the main menu
 
   
+## User interface(ui)
   
+  to lauch the app ui
+  
+  run the files ``` ui/app.py``` on your terminal the menu will appear.
+
+
 ## Todos:
  * Add login and registration functions
  * Add group chat
