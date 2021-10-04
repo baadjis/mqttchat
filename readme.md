@@ -1,7 +1,8 @@
 # mqttchat
 A chat app using mqtt protocol (group or one to one) with paho mqtt python client
 including a bot(searching from google to answer your questions )on the terminal.
-this also include a user interface built with kivy.
+
+This also includes a user interface using kivy.
 
 ##  CLI 
 ### chat  with another client
